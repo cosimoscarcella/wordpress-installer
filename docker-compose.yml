@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: change-root-password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: change-mysql-password
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - 8080:80
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: change-mysql-password
+      WORDPRESS_TABLE_PREFIX: "wp_"
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - wp_data:/var/www/html
+
+  wordpress-cli:
+    depends_on:
+      - db
+      - wordpress
+    image: wordpress:cli
+    # This is required to run wordpress-cli with the same
+    # user-id as wordpress. This way there are no permission problems
+    # when running the cli
+    user: xfs
+    # The sleep 10 is required so that the command is run after
+    # mysql is initialized. Depending on your machine this might take
+    # longer or it can go faster.
+    command: >
+      /bin/sh -c '
+      sleep 10;
+      wp core install --path="/var/www/html" --url="http://localhost:8000" --title="Wordpress" --admin_user=admin --admin_password=change-cli-password --admin_email=change-email
+      '
+    volumes:
+      - wp_data:/var/www/html
+
+volumes:
+  db_data:
+  wp_data:
