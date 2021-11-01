@@ -80,10 +80,10 @@ This is a useful project that integrates all tools to get a clean and easy-to-us
 ### Built With
 
 <p>
-    &nbsp;&nbsp;<a href="https://wordpress.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-wordpress.svg" alt="docker" width="64" height="64"/></a>
-    &nbsp;&nbsp;<a href="https://www.docker.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-docker.svg" alt="docker" width="64" height="64"/></a>
-    &nbsp;&nbsp;<a href="https://docs.docker.com/compose/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-docker-compose.svg" alt="docker" width="64" height="64"/></a>
-    &nbsp;&nbsp;<a href="https://www.mysql.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-mysql.svg" alt="mysql" width="64" height="64"/></a>
+  <a href="https://wordpress.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-wordpress.svg" alt="docker" width="64" height="64"/></a>
+  <a href="https://www.docker.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-docker.svg" alt="docker" width="64" height="64"/></a>
+  <a href="https://docs.docker.com/compose/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-docker-compose.svg" alt="docker" width="64" height="64"/></a>
+  <a href="https://www.mysql.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-mysql.svg" alt="mysql" width="64" height="64"/></a>
 </p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -177,9 +177,9 @@ Distributed under the **MIT License**. See `LICENSE.txt` for more information.
 
 👤 **Cosimo Scarcella**
 
-- Twitter: [@ScarcellaCosimo](https://twitter.com/ScarcellaCosimo)
-- Github: [@cosimoscarcella](https://github.com/cosimoscarcella)
-- Mail: [cosimo.scarcella@gmail.com](mailto:cosimo.scarcella@gmail.com)
+- <img align="center" src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/social-btn-twitter.svg" alt="twitter" width="20" height="20"/> Twitter: [@ScarcellaCosimo](https://twitter.com/ScarcellaCosimo)
+- <img align="center" src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/social-btn-github.svg" alt="github" width="20" height="20"/>  Github: [@cosimoscarcella](https://github.com/cosimoscarcella)
+- 📧 Mail: [cosimo.scarcella@gmail.com](mailto:cosimo.scarcella@gmail.com)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
