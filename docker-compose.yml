@@ -28,6 +28,7 @@ services:
       WORDPRESS_DEBUG: 1
     volumes:
       - wp_data:/var/www/html
+      - ./configuration/apache2.conf :/etc/apache2/apache2.conf
 
   wordpress-cli:
     depends_on:
