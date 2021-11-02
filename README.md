@@ -119,11 +119,12 @@ To get your WordPress installation running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## 🚀 Usage
 
-1. Run docker-compose command
+1. Modify passwords and variables inside ```.env``` file as you wish
+2. Run docker-compose command
    ```sh
    docker-compose up -d
    ```
-2. Your WordPress installation is now available at [http://localhost:8080]( http://localhost:8080)
+3. Your WordPress installation is now available at [http://localhost:8080]( http://localhost:8080)
 
 
 
