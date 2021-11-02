@@ -125,6 +125,7 @@ To get your WordPress installation running follow these simple steps.
    docker-compose up -d
    ```
 3. Your WordPress installation is now available at [http://localhost:8080]( http://localhost:8080)
+4. PhpMyAdmin installation is now available at [http://localhost:8000]( http://localhost:8000)
 
 
 
@@ -191,6 +192,8 @@ Distributed under the **MIT License**. See `LICENSE.txt` for more information.
 ## 🏆 Acknowledgments
 
 * [https://stackoverflow.com/questions/50999848/how-to-run-wp-cli-in-docker-compose-yml](https://stackoverflow.com/questions/50999848/how-to-run-wp-cli-in-docker-compose-yml)
+* [https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose)
+* [https://github.com/nezhar/wordpress-docker-compose/blob/master/docker-compose.yml](https://github.com/nezhar/wordpress-docker-compose/blob/master/docker-compose.yml)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
