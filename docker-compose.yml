@@ -6,13 +6,14 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     restart: always
-    ports:
-      - 33060:3306
+    env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - wordpress-network
 
   wordpress:
     depends_on:
@@ -21,6 +22,7 @@ services:
     ports:
       - 8080:80
     restart: always
+    env_file: .env
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
@@ -31,6 +33,8 @@ services:
     volumes:
       - wp_data:/var/www/html
       - ./configuration/apache2.conf :/etc/apache2/apache2.conf
+    networks:
+      - wordpress-network
 
   wordpress-cli:
     depends_on:
@@ -47,11 +51,32 @@ services:
     command: >
       /bin/sh -c '
       sleep 10;
-      wp core install --path="/var/www/html" --url="http://localhost:8000" --title="Wordpress" --admin_user=admin --admin_password=change-cli-password --admin_email=change-email
+      wp core install --path="/var/www/html" --url="http://localhost:8080" --title="Wordpress" --admin_user=admin --admin_password=change-cli-password --admin_email=change-email
       '
     volumes:
       - wp_data:/var/www/html
+    networks:
+      - wordpress-network
+      
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    env_file: .env
+    ports:
+      - '8000:80'
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+     - wordpress-network
 
 volumes:
   db_data:
   wp_data:
+  
+networks:
+  wordpress-network:
+    driver: bridge
