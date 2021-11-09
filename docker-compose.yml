@@ -64,7 +64,7 @@ services:
     command: >
       /bin/sh -c '
       sleep 10;
-      wp core install --path="/var/www/html" --url="http://localhost:8080" --title="Wordpress" --admin_user=wordpress --admin_password=change-user-password --admin_email=a@b.it
+      wp core install --path="/var/www/html" --url="http://localhost:${WORDPRESS_PORT}" --title="${WORDPRESS_TITLE}" --admin_user=${WORDPRESS_ADMIN_USER} --admin_password=${WORDPRESS_ADMIN_PASSWORD} --admin_email=${WORDPRESS_ADMIN_EMAIL}
       '
     volumes:
       - wp_data:/var/www/html:rw
