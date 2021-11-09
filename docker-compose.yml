@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  db:
+  mysql:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
@@ -17,14 +17,14 @@ services:
 
   phpmyadmin:
     depends_on:
-      - db
+      - mysql
     image: phpmyadmin/phpmyadmin
     restart: always
     env_file: .env
     ports:
       - ${PHPMYADMIN_PORT}:80
     environment:
-      PMA_HOST: db
+      PMA_HOST: mysql
       PMA_PORT: 3306
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
@@ -34,19 +34,19 @@ services:
 
   wordpress:
     depends_on:
-      - db
+      - mysql
     image: wordpress:latest
     ports:
       - ${WORDPRESS_PORT}:80
     restart: always
     env_file: .env
     environment:
-      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_HOST: mysql:3306
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
       WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
-      WORDPRESS_DEBUG: 1
+      WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-false}
     volumes:
       - wp_data:/var/www/html
       - ./configuration/apache2.conf :/etc/apache2/apache2.conf
@@ -55,30 +55,26 @@ services:
 
   wordpress-cli:
     depends_on:
-      - db
+      - mysql
       - wordpress
     image: wordpress:cli
-    # This is required to run wordpress-cli with the same
-    # user-id as wordpress. This way there are no permission problems
-    # when running the cli
-    user: xfs
-    # The sleep 10 is required so that the command is run after
-    # mysql is initialized. Depending on your machine this might take
-    # longer or it can go faster.
+    environment:
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
     command: >
       /bin/sh -c '
       sleep 10;
-      wp core install --path="/var/www/html" --url="http://localhost:8080" --title="Wordpress" --admin_user=admin --admin_password=change-cli-password --admin_email=change-email
+      wp core install --path="/var/www/html" --url="http://localhost:8080" --title="Wordpress" --admin_user=wordpress --admin_password=change-user-password --admin_email=a@b.it
       '
     volumes:
-      - wp_data:/var/www/html
+      - wp_data:/var/www/html:rw
     networks:
       - wordpress-network
 
 volumes:
   db_data:
   wp_data:
-  
+
 networks:
   wordpress-network:
     driver: bridge
