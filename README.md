@@ -80,10 +80,12 @@ This is a useful project that integrates all tools to get a clean and easy-to-us
 ### Built With
 
 <p>
-  <a href="https://wordpress.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-wordpress.svg" alt="docker" width="64" height="64"/></a>
   <a href="https://www.docker.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-docker.svg" alt="docker" width="64" height="64"/></a>
   <a href="https://docs.docker.com/compose/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-docker-compose.svg" alt="docker" width="64" height="64"/></a>
+  <a href="https://wordpress.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-wordpress.svg" alt="docker" width="64" height="64"/></a>
+  <a href="https://wp-cli.org/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-wp-cli.svg" alt="docker" width="64" height="64"/></a>
   <a href="https://www.mysql.com/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-mysql.svg" alt="mysql" width="64" height="64"/></a>
+  <a href="https://www.phpmyadmin.net/" target="_blank"> <img src="https://github.com/cosimoscarcella/cosimoscarcella/raw/main/images/logo-phpmyadmin.svg" alt="mysql" width="64" height="64"/></a>
 </p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
