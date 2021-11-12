@@ -126,6 +126,7 @@ To get your WordPress installation running follow these simple steps.
    ```sh
    ./wp-uninstall.sh
    ```
+2. Use ```-h | --help``` option for further information
 
 ### Initialize Wordpress Installation
 
