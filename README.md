@@ -12,13 +12,6 @@
 
 
 
-<!-- PROJECT LOGO -->
-<!-- <br />
-<div align="center">
-  <a href="https://github.com/cosimoscarcella/wordpress-installer">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
-
 <h2 align="center">Wordpress Installer</h2>
 
   <p align="center">
@@ -27,8 +20,6 @@
     <a href="https://www.cosimoscarcella.com/install-wordpress-and-wp-cli-using-docker-compose/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="https://github.com/cosimoscarcella/wordpress-installer">View Demo</a>
-    · -->
     <a href="https://www.cosimoscarcella.com/install-wordpress-and-wp-cli-using-docker-compose">Project Link</a>
     ·
     <a href="https://github.com/cosimoscarcella/wordpress-installer/issues">Report Bug</a>
@@ -57,7 +48,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -69,8 +59,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## 🚧 About The Project
-
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 This is a useful project that integrates all tools to get a clean and easy-to-use WordPress installation from scratch.
 
@@ -121,33 +109,33 @@ To get your WordPress installation running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## 🚀 Usage
 
+### Install
+
 1. Modify passwords and variables inside ```.env``` file as you wish
-2. Run docker-compose command
+2. Run shell command
    ```sh
-   docker-compose up -d
+   ./wp-install.sh
    ```
 3. Your WordPress installation is now available at [http://localhost:8080]( http://localhost:8080)
-4. PhpMyAdmin installation is now available at [http://localhost:8000]( http://localhost:8000)
+4. PhpMyAdmin installation is now available at [http://localhost:3000]( http://localhost:3000)
 
 
+### Uninstall
+
+1. Run shell command
+   ```sh
+   ./wp-uninstall.sh
+   ```
+
+### Initialize Wordpress Installation
+
+1. Run shell command
+   ```sh
+   ./wp-init.sh
+   ```
+1. Your Wordpress installation in now initialized using **wp-cli** according to  ```./bin/install-wp.sh``` file
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-<!-- ## Roadmap
-
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
-
-See the [open issues](https://github.com/cosimoscarcella/wordpress-installer/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p> -->
-
-
 
 <!-- CONTRIBUTING -->
 ## 🤝 Contributing
