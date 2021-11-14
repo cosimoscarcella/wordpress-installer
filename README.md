@@ -128,13 +128,20 @@ To get your WordPress installation running follow these simple steps.
    ```
 2. Use ```-h | --help``` option for further information
 
-### Initialize Wordpress Installation
+### Init Wordpress Installation
 
 1. Run shell command
    ```sh
    ./wp-init.sh
    ```
-1. Your Wordpress installation in now initialized using **wp-cli** according to  ```./bin/install-wp.sh``` file
+2. Your Wordpress installation in now initialized using **wp-cli** according to  ```./bin/install-wp.sh``` file
+
+### Execute wp-cli command
+1. Run shell command
+   ```sh
+   ./wp-cli.sh "<command>"
+   ```
+   to execute your custom wp-cli commands. For example ```./wp-cli.sh "wp db export -" > dump.sql``` to export wordpress database
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -185,6 +192,7 @@ Distributed under the **MIT License**. See `LICENSE.txt` for more information.
 * [https://stackoverflow.com/questions/50999848/how-to-run-wp-cli-in-docker-compose-yml](https://stackoverflow.com/questions/50999848/how-to-run-wp-cli-in-docker-compose-yml)
 * [https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose)
 * [https://github.com/nezhar/wordpress-docker-compose/blob/master/docker-compose.yml](https://github.com/nezhar/wordpress-docker-compose/blob/master/docker-compose.yml)
+* [https://github.com/chriszarate/docker-compose-wordpress](https://github.com/chriszarate/docker-compose-wordpress)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
