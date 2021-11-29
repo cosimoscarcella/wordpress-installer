@@ -6,7 +6,7 @@ REMOVE_VOLUMES=""
 function usage()
 {
     echo ""
-    echo "Usage: wp-uninstall.sh [OPTIONS]"
+    echo "Usage: sh $0 [OPTIONS]"
     echo ""
     echo "Options:"
     echo "  -h | --help          Show this help message and exit"

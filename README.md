@@ -114,7 +114,7 @@ To get your WordPress installation running follow these simple steps.
 1. Modify passwords and variables inside ```.env``` file as you wish
 2. Run shell command
    ```sh
-   ./wp-install.sh
+   sh wp-install.sh
    ```
 3. Your WordPress installation is now available at [http://localhost:8080]( http://localhost:8080)
 4. PhpMyAdmin installation is now available at [http://localhost:3000]( http://localhost:3000)
@@ -124,7 +124,7 @@ To get your WordPress installation running follow these simple steps.
 
 1. Run shell command
    ```sh
-   ./wp-uninstall.sh
+   sh wp-uninstall.sh
    ```
 2. Use ```-h | --help``` option for further information
 
@@ -132,14 +132,14 @@ To get your WordPress installation running follow these simple steps.
 
 1. Run shell command
    ```sh
-   ./wp-init.sh
+   sh wp-init.sh
    ```
 2. Your Wordpress installation in now initialized using **wp-cli** according to  ```./bin/install-wp.sh``` file
 
 ### Execute wp-cli command
 1. Run shell command
    ```sh
-   ./wp-cli.sh "<command>"
+   sh wp-cli.sh "<command>"
    ```
    to execute your custom wp-cli commands. For example ```./wp-cli.sh "wp db export -" > dump.sql``` to export wordpress database
 
