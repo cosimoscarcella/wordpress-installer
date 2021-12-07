@@ -65,6 +65,7 @@ services:
     # when running the cli
     user: xfs
     environment:
+      WP_CLI_CACHE_DIR: ${WP_CLI_CACHE_DIR}
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
     volumes:

@@ -100,6 +100,7 @@ To get your WordPress installation running follow these simple steps.
 2. Go into the created folder
    ```sh
    cd ./wordpress-installer
+   find . -type f -iname "*.sh" -exec chmod +x {} \;
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
