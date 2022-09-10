@@ -144,6 +144,40 @@ To get your WordPress installation running follow these simple steps.
    ```
    to execute your custom wp-cli commands. For example ```./wp-cli.sh "wp db export -" > dump.sql``` to export wordpress database
 
+### Edit WordPress File in Docker
+1. List Containers
+```sh
+docker container ls
+
+CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS          PORTS                  NAMES
+b77eac5ae3a9   wordpress:latest        "docker-entrypoint.s…"   31 minutes ago   Up 31 minutes   0.0.0.0:8080->80/tcp   wordpress-installer_wordpress_1
+685c94879f3f   phpmyadmin/phpmyadmin   "/docker-entrypoint.…"   31 minutes ago   Up 31 minutes   0.0.0.0:3000->80/tcp   wordpress-installer_phpmyadmin_1
+b74bbc5019ae   mysql:5.7               "docker-entrypoint.s…"   31 minutes ago   Up 31 minutes   3306/tcp, 33060/tcp    wordpress-installer_mysql_1
+```
+
+2. SSH into a wordpress:latest Container
+```sh
+sudo docker container exec -it b77eac5ae3a9 bash
+
+root@b77eac5ae3a9:/var/www/html# 
+```
+
+3. install nano on WordPress docker image
+```sh
+apt-get update
+apt-get install nano
+```
+
+4. For Example edit .htaccess file
+```sh
+nano /var/www/html/.htaccess
+```
+
+5. Restart Docker
+```sh
+docker restart b77eac5ae3a9
+```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
