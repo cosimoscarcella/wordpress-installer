@@ -154,6 +154,15 @@ b77eac5ae3a9   wordpress:latest        "docker-entrypoint.s…"   31 minutes ago
 685c94879f3f   phpmyadmin/phpmyadmin   "/docker-entrypoint.…"   31 minutes ago   Up 31 minutes   0.0.0.0:3000->80/tcp   wordpress-installer_phpmyadmin_1
 b74bbc5019ae   mysql:5.7               "docker-entrypoint.s…"   31 minutes ago   Up 31 minutes   3306/tcp, 33060/tcp    wordpress-installer_mysql_1
 ```
+or
+```sh
+docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Image}}'
+
+CONTAINER ID   NAMES                            IMAGE
+b77eac5ae3a9   wordpress-installer_wordpress    wordpress:latest
+685c94879f3f   wordpress-installer_phpmyadmin   phpmyadmin/phpmyadmin
+b74bbc5019ae   wordpress-installer_mysql        mysql:5.7
+```
 
 2. SSH into a wordpress:latest Container
 ```sh
